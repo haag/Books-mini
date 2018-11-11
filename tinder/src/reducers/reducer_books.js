@@ -1,4 +1,4 @@
-const myFunc = () => {
+const BooksReducer = () => {
     return [
         {title: "JS"},
         {title: "HP"},
@@ -7,4 +7,4 @@ const myFunc = () => {
     ]
 }
 
-export default myFunc
+export default BooksReducer
