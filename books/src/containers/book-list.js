@@ -12,11 +12,11 @@ class BookList extends Component {
     renderList() {
         return this.props.books.map(book => {
             return (
-                <Row className="d-flex flex-row" sm="4">
-                    <Col sm="6">
+                <Row className="w-50" >
+                    <Col>
                     <Card key={book.title} className="list-group-item">
                         <CardTitle> { book.title } </CardTitle>  
-                        <Button color="danger" onClick={() => this.props.selectBook(book)}> Details </Button>
+                        <Button color="primary" onClick={() => this.props.selectBook(book)}> Details </Button>
                     </Card>
                     </Col>
                 </Row>
@@ -27,7 +27,7 @@ class BookList extends Component {
 
     render(){
         return (
-            <div className="list-group col-sm-3">
+            <div className="list-group d-flex flex-row flex-wrap justify-content-around align-content-around ">
                 {this.renderList()}
             </div>
         )
