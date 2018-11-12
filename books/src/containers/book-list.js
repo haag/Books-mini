@@ -3,25 +3,33 @@ import { connect } from 'react-redux'
 import selectBook from "../actions/index"
 import { bindActionCreators } from 'redux'
 
+//Styling
+import { Card, Row, Col, CardText, CardBody,
+    CardTitle, CardSubtitle, Button } from 'reactstrap';
+
 
 class BookList extends Component {
     renderList() {
-        // console.log(this.props)
         return this.props.books.map(book => {
             return (
-                <li 
-                    onClick={() => this.props.selectBook(book)}
-                    key={book.title} className="list-group-item">
-                {book.title}
-                </li>
+                <Row className="d-flex flex-row" sm="4">
+                    <Col sm="6">
+                    <Card key={book.title} className="list-group-item">
+                        <CardTitle> { book.title } </CardTitle>  
+                        <Button color="danger" onClick={() => this.props.selectBook(book)}> Details </Button>
+                    </Card>
+                    </Col>
+                </Row>
             )
         })
     }
+
+
     render(){
         return (
-            <ul className="list-group col-sm-4">
+            <div className="list-group col-sm-3">
                 {this.renderList()}
-            </ul>
+            </div>
         )
     }
 }
